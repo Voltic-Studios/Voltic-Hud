@@ -1,0 +1,194 @@
+@font-face {
+    font-family: bankgothic;
+    src: url("./font/bankgothic.ttf");
+}
+
+@import url('https://fonts.cdnfonts.com/css/alarm-clock');
+
+body {
+    overflow: hidden;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    overflow-x: hidden; /* Oculta la barra de desplazamiento horizontal */
+    margin: 0 auto; /* Centra horizontalmente */
+}
+
+#player-hud-container {
+    background-color: rgba(0, 0, 0, 1);
+    padding: 1px;
+    border-radius: 5px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    bottom: 7px;
+    gap: 5px;
+    left: 50%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Centra horizontalmente */
+    z-index: 1; /* Ensure it's below carhud-container */
+}
+
+.hud-field {
+    height: 25px;
+    width: 35px;
+    border: 4px solid rgb(40, 40, 40);
+    border-radius: 4px;
+    background-color: rgb(40, 40, 40);
+    position: relative;
+}
+
+.hud-icon {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    transform: translateY(-25%), translateX(-30%);
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hud-icon i {
+    font-size: 12px;
+}
+
+#health {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    max-width: 62px;
+}
+
+#armor {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    max-width: 61px;
+}
+
+#thirst {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    max-width: 80px;
+    box-shadow: 0px 0px 7px 3px rgba(0 121 252 / 0.4);
+}
+
+#hunger {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    max-width: 80px;
+}
+
+#stamina {
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+}
+
+
+/*   LOGO DEL SERVER   */
+#logo-container {
+    position: absolute;
+    top: 40px;
+    right: 2%;
+    z-index: 2;
+    opacity: 0;
+    animation: slideInAndFade 1s forwards;
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+}
+
+/*-----------------------*/
+
+
+@keyframes slideInAndFade {
+    0% {
+        right: -10%;
+        opacity: 0;
+    }
+    100% {
+        right: 2%;
+        opacity: 1;
+    }
+}
+
+.car-container {
+    display: absolute;
+    font-family: bankgothic;
+    position: absolute;
+    text-align: center;
+    font-size: 3.5rem;
+    bottom: 6vh; /* Adjusted to be above player-hud-container */
+    left: 50%;
+    transform: translateX(-50%);
+    height: 7vh;
+    width: 7vw;
+    color: white;
+    animation: carhud-enter .5s;
+    z-index: 2; /* Ensure it's above player-hud-container */
+}
+
+
+.vel {
+    position: absolute;
+    text-align: center;
+    font-size: 3.5rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 0 0 1vh black;
+}
+
+.kmh {
+    font-size: .8rem;
+    text-shadow: 0 0 1vh black;
+}
+
+@keyframes carhud-enter {
+    from {
+        bottom: -2vh;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+/* ------------------------------------------------ */
+
+.fuel-container {
+    position: absolute;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    color: white;
+    font-size: 0.8rem;
+    font-family: bankgothic;
+    
+    bottom: 5vh; /* Adjusted to be above player-hud-container */
+    left: 50%;
+    transform: translateX(-50%);
+
+    animation: carhud-enter .5s;
+}
