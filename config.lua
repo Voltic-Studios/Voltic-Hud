@@ -6,7 +6,7 @@ CarHUD.type = "km/h" -- mp/h or km/h
 
 CarHUD.fuel = 100 -- Determina a que % de gasolina se muestra la gasolina
 
-Config = Config or {}
+Config = Config or {} -- XD
 
 Config.framework = "esx" -- qbcore / esx
 
